@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Phiếu đánh giá thực tập chuyên ngành</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<style>
+body {
+background-color: #f8f9fa;
+}
+
+.container {
+margin-top: 50px;
+}
+
+.highlight {
+background-color: #e9ecef;
+}
+.d-flex.justify-content-end {
+justify-content: flex-end;
+}
+
+.gap-4 > *:not(:last-child) {
+margin-right: 1rem;
+}
+.d-flex.justify-content-end {
+justify-content: flex-start;
+align-items: flex-start;
+}
+</style>
+</head>
+
+<body>
+    <div class="container">
+      <h1 class="text-center">Phiếu đánh giá thực tập chuyên ngành</h1>
+      <h4 class="mt-4">
+        Họ và tên sinh viên:
+        .......................................................
+      </h4>
+      <h4>Ngày sinh: .../......</h4>
+      <h4>
+        Mã sinh viên: ............................................... Lớp:
+        .......................
+      </h4>
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th scope="col">TT</th>
+            <th scope="col">CĐR</th>
+            <th scope="col">Nội dung đánh giá</th>
+            <th scope="col">Điểm</th>
+            <th scope="col">Ghi chú</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>CLO1.1</td>
+            <td>Giải thích quy trình tạo ra sản phẩm kỹ thuật</td>
+            <td><input type="text" class="form-control" id="diem1" /></td>
+            <td><input type="text" class="form-control"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>CLO1.2</td>
+            <td>
+              Trình bày kỹ thuật và công nghệ liên quan đến tích hợp, xây dựng
+              và phát triển các hệ thống công nghệ thông tin
+            </td>
+            <td><input type="text" class="form-control" id="diem2" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>CLO2.1</td>
+            <td>
+              Thiết kế hệ thống để đảm bảo các mục tiêu của bài toán phù hợp bối
+              cảnh
+            </td>
+            <td><input type="text" class="form-control" id="diem3" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>CLO2.2</td>
+            <td>
+              Cài đặt và triển khai hệ thống (mạng và phần mềm) tương thích với
+              tài liệu thiết kế
+            </td>
+            <td><input type="text" class="form-control" id="diem4" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>CLO3.3</td>
+            <td>
+              Thể hiện kỹ năng phân tích và giải quyết tình huống kỹ thuật
+            </td>
+            <td><input type="text" class="form-control" id="diem5" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>CLO4.1</td>
+            <td>Thuyết trình kết quả đạt được trong quá trình thực tập</td>
+            <td><input type="text" class="form-control"id="diem6" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>CLO4.2</td>
+            <td>Thể hiện kế hoạch và nội dung thực tập trong quyển báo cáo</td>
+            <td><input type="text" class="form-control" id="diem7" /></td>
+            <td></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="4" class="text-right">Điểm tổng</th>
+            <th class="highlight">
+              <input type="text" class="form-control" id="tongdiem" />
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+      <h4 class="mt-4">Nhận xét chung:</h4>
+      <textarea class="form-control" rows="4"></textarea>
+
+      <div class="d-flex justify-content-end mt-4 gap-4">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+        <button class="btn btn-primary" type="submit">Download PDF</button>
+    </div>
+    </div>
+
+    <script>
+      function tinhTongDiem() {
+        var diem1 = parseFloat(document.getElementById("diem1").value) || 0;
+        var diem2 = parseFloat(document.getElementById("diem2").value) || 0;
+        var diem3 = parseFloat(document.getElementById("diem3").value) || 0;
+        var diem4 = parseFloat(document.getElementById("diem4").value) || 0;
+        var diem5 = parseFloat(document.getElementById("diem5").value) || 0;
+        var diem6 = parseFloat(document.getElementById("diem6").value) || 0;
+        var diem7 = parseFloat(document.getElementById("diem7").value) || 0;
+
+        var tongDiem = diem1 + diem2 + diem3 + diem4 + diem5 + diem6 + diem7;
+        document.getElementById("tongdiem").value = tongDiem.toFixed(2);
+      }
+
+      document.addEventListener("change", tinhTongDiem);
+    </script>
+  </body>
+</html>
